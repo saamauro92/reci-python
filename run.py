@@ -1,3 +1,4 @@
+from time import sleep
 
 class recipeClass:
     def __init__(self, name, instructions):
@@ -16,8 +17,10 @@ class recipeClass:
 
 
 def display_program_welcome():
+
     """
-    Prints 'welcome to the reci-python program'
+    Prints program title.
+    Gets initial_text file and prints line every 2 seconds
     """
     print(
         """
@@ -28,7 +31,17 @@ def display_program_welcome():
 
              (RECI-PYTHON)
 
+    
     """)
+
+
+    with open('initial_text.txt', 'r') as file:
+        for line in file:
+            print(line, flush=True, end='\n') 
+            sleep(2)
+
+
+
 
 
 def main():
@@ -39,3 +52,7 @@ def main():
 
 
 main()
+
+
+
+
