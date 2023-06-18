@@ -40,13 +40,35 @@ def display_program_welcome():
             print(line, flush=True, end='\n') 
             sleep(2)
 
+def ingredient_inputs():
+    """
+    Gets the ingredients and returns a list of them
+    """
 
+    ingredients = []
+    try:
+        ingredient_1 = input('\n Type and enter your first ingredient\n')
+        ingredients.append(ingredient_1)
+
+    except:
+        print("error")
+    
+    return ingredients
 
 
 
 def main():
+
+    """
+    Run all programs functions
+
+    """
     display_program_welcome()
-    new_recipe = RecipeClass("fake recipe", "fake instructions...")
-    print(new_recipe.print_data())
+    # new_recipe = RecipeClass("fake recipe", "fake instructions...")
+    # print(new_recipe.print_data())
+
+    ingredients =  ingredient_inputs()
+    print(ingredients)
+
 main()
 
