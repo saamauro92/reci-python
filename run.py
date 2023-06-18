@@ -1,7 +1,11 @@
 from time import sleep
 
-class recipeClass:
+class RecipeClass:
+    
+    """ Creates an instance of recipeClass"""
+
     def __init__(self, name, instructions):
+
         self.name = name
         self.instructions = instructions
 
@@ -11,10 +15,7 @@ class recipeClass:
 
         Instructions: \n \n
         {self.instructions}
-
-
         """
-
 
 def display_program_welcome():
 
@@ -34,7 +35,6 @@ def display_program_welcome():
     
     """)
 
-
     with open('initial_text.txt', 'r') as file:
         for line in file:
             print(line, flush=True, end='\n') 
@@ -46,13 +46,7 @@ def display_program_welcome():
 
 def main():
     display_program_welcome()
-
-    new_recipe = recipeClass("fake recipe", "fake instructions...")
+    new_recipe = RecipeClass("fake recipe", "fake instructions...")
     print(new_recipe.print_data())
-
-
 main()
-
-
-
 
