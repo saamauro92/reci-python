@@ -1,4 +1,5 @@
 from time import sleep
+import re
 
 class RecipeClass:
     
@@ -38,7 +39,7 @@ def display_program_welcome():
     with open('initial_text.txt', 'r') as file:
         for line in file:
             print(line, flush=True, end='\n') 
-            sleep(2)
+            #sleep(2)
 
 def ingredient_inputs():
     """
@@ -46,14 +47,30 @@ def ingredient_inputs():
     """
 
     ingredients = []
-    try:
-        ingredient_1 = input('\n Type and enter your first ingredient\n')
-        ingredients.append(ingredient_1)
-
-    except:
-        print("error")
-    
-    return ingredients
+    while True:
+        try:
+            ingredient_1 = input('\nType and enter your first ingredient\n')
+            match = re.match(r'^[a-zA-Z\s]+$', ingredient_1)
+            if match == None:
+                raise TypeError(f"Please enter a valid text format")
+            else:              
+                ingredients.append(ingredient_1)
+                option_selected = int(input("""
+                
+                \n
+                Select options:
+                1- Add other ingredient
+                2- Get recipe
+            
+                """
+                ))
+                
+                print("option selected", option_selected)
+        
+        except TypeError as e:
+            print(f"error:{e} ")
+        
+        return ingredients
 
 
 
