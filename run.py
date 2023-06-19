@@ -58,10 +58,7 @@ def ingredient_inputs():
                 if option == 1:                  
                     continue
                 elif option == 2:
-                    return ingredients
-                else:
-                    print("Please enter a valid option")
-                    continue                   
+                    return ingredients            
                                  
 
         except ValueError as e:
@@ -74,23 +71,25 @@ def ingredient_inputs():
 
 def display_more_options():
     """
-    Displays an input and returns the value of it, options 1 or 2 if not returns an error
+    Displays an input and returns the value options 1 or 2 
     """
-    option_selected = int(input("""
+    while True:      
+        option_selected = input("""
+                
+                    \n
+    Select options:
+        Type 1 and enter to add other ingredient
+        Type 2 and enter to get the recipe   
             
-                \n
-Select options:
-     Type 1 and enter to add other ingredient
-     Type 2 and enter to get the recipe   
+                    """)
         
-                """))
-     
-    if option_selected == 1:
-        return 1
-    elif option_selected == 2:
-        return 2
-    else:
-         return ValueError
+        if option_selected == '1':
+            return 1
+        elif option_selected == '2':
+            return 2        
+        else:
+            print("Please enter a valid option")
+            continue
 
 
 
