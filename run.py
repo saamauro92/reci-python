@@ -55,7 +55,7 @@ def ingredient_inputs():
                 raise ValueError(f"Please enter a valid text format")
             else:
                 ingredients.append(ingredient)
-                print(Fore.GREEN,f"\n --You have selected -- {ingredient} -- ")
+                print(Fore.GREEN,f"\n --You have selected " + ", ".join(ingredients))
                 option = display_more_options() 
                 if option == 1:                  
                     continue
