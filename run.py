@@ -69,7 +69,7 @@ def ingredient_inputs():
                                  
 
         except ValueError as e:
-            print(Fore.MAGENTA, f"\n // {e} ")  
+            print(Fore.RED, f"\n/!\ {e} ", Style.RESET_ALL)  
             continue
 
 
@@ -95,7 +95,7 @@ def display_more_options():
         elif option_selected == '3':
             return 3  
         else:
-            print(Fore.MAGENTA, "\nX Please enter a valid option"+ Style.RESET_ALL)
+            print(Fore.RED, "\n/!\ Please enter a valid option"+ Style.RESET_ALL)
             continue
 
 def make_request(ingredients):
