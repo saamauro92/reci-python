@@ -60,7 +60,10 @@ def ingredient_inputs():
                 if option == 1:                  
                     continue
                 elif option == 2:
-                    return ingredients            
+                    return ingredients
+                elif option == 3:
+                    ingredients = []
+                    continue            
                                  
 
         except ValueError as e:
@@ -73,21 +76,24 @@ def ingredient_inputs():
 
 def display_more_options():
     """
-    Displays an input and returns the value options 1 or 2 
+    Displays an input and returns the value options 1, 2 or 3
     """
     while True:      
         option_selected = input(Fore.YELLOW + """
                 
 --> Select options:
         Type 1 and enter to add other ingredient
-        Type 2 and enter to get the recipe   
+        Type 2 and enter to get the recipe
+        type 3 to start again   
             
                     """)
         
         if option_selected == '1':
             return 1
         elif option_selected == '2':
-            return 2        
+            return 2      
+        elif option_selected == '3':
+            return 3  
         else:
             print(Fore.MAGENTA, "\n // Please enter a valid option")
             continue
