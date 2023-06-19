@@ -43,43 +43,61 @@ def display_program_welcome():
 
 def ingredient_inputs():
     """
-    Gets the ingredients and returns a list of them
+    Get an ingredient and returns it
     """
-
     ingredients = []
     while True:
         try:
-            ingredient_1 = input('\nType and enter your first ingredient\n')
-            match = re.match(r'^[a-zA-Z\s]+$', ingredient_1)
-            if match == None:
-                raise TypeError(f"Please enter a valid text format")
-            else:              
-                ingredients.append(ingredient_1)
-                option_selected = int(input("""
-                
-                \n
-                Select options:
-                1- Add other ingredient
-                2- Get recipe
+            ingredient = input('\nType and enter your ingredient\n')
+            match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
+            if match_string == None:
+                raise ValueError(f"Please enter a valid text format")
+            else:
+                ingredients.append(ingredient)
+                option = display_more_options() 
+                if option == 1:                  
+                    continue
+                elif option == 2:
+                    return ingredients
+                else:
+                    print("Please enter a valid option")
+                    continue                   
+                                 
+
+        except ValueError as e:
+            print(f"error:{e} ")  
+            continue
+
+
+ 
+
+
+def display_more_options():
+    option_selected = int(input("""
             
-                """
-                ))
-                
-                print("option selected", option_selected)
+                \n
+Select options:
+     1- Add other ingredient
+     2- Get recipe
         
-        except TypeError as e:
-            print(f"error:{e} ")
-        
-        return ingredients
+                """))
+     
+    if option_selected == 1:
+        return 1
+    elif option_selected == 2:
+        return 2
+    else:
+         return ValueError
 
 
 
 def main():
-
+    
     """
     Run all programs functions
 
     """
+
     display_program_welcome()
     # new_recipe = RecipeClass("fake recipe", "fake instructions...")
     # print(new_recipe.print_data())
