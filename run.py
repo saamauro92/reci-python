@@ -3,7 +3,7 @@ import re
 from colorama import Fore, Style
 import config
 import requests
-
+from tqdm import trange
 API_URL = "https://tasty.p.rapidapi.com/recipes/list"
 API_KEY = config.API_KEY
 
@@ -91,6 +91,7 @@ def display_more_options():
         if option_selected == '1':
             return 1
         elif option_selected == '2':
+            print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
             return 2      
         elif option_selected == '3':
             return 3  
@@ -102,13 +103,15 @@ def make_request(ingredients):
     """
     Gets a list of ingredients and make a request to the API
     """
-    print("LOADING...")
     QUERYSTRING = {"from": "1", "size": "10", "q": ", ".join(ingredients)}
     HEADERS = {
         "X-RapidAPI-Key": API_KEY,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
     }
+    
     response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING)
+    for i in trange(100):
+         sleep(0.03)
     data = response.json()
     if len(data['results']) == 0:
         print(Fore.BLUE, """
