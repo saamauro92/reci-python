@@ -43,7 +43,7 @@ def display_program_welcome():
 
 def ingredient_inputs():
     """
-    Get an ingredient and returns it
+    Get an ingredient and returns a list
     """
     ingredients = []
     while True:
