@@ -1,5 +1,6 @@
 from time import sleep
 import re
+from colorama import Fore
 
 class RecipeClass:
     
@@ -24,7 +25,7 @@ def display_program_welcome():
     Prints program title.
     Gets initial_text file and prints line every 2 seconds
     """
-    print(
+    print(Fore.GREEN,
         """
               WELCOME TO
 
@@ -48,12 +49,13 @@ def ingredient_inputs():
     ingredients = []
     while True:
         try:
-            ingredient = input('\n--> Type and enter your ingredient\n')
+            ingredient = input(Fore.YELLOW +'\n--> Type and enter your ingredient\n\n')
             match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
             if match_string == None:
-                raise ValueError(f"--> Please enter a valid text format")
+                raise ValueError(f"Please enter a valid text format")
             else:
                 ingredients.append(ingredient)
+                print(Fore.GREEN,f"\n --You have selected -- {ingredient} -- ")
                 option = display_more_options() 
                 if option == 1:                  
                     continue
@@ -62,7 +64,7 @@ def ingredient_inputs():
                                  
 
         except ValueError as e:
-            print(f"error:{e} ")  
+            print(f"**Error:{e} ")  
             continue
 
 
@@ -74,7 +76,7 @@ def display_more_options():
     Displays an input and returns the value options 1 or 2 
     """
     while True:      
-        option_selected = input("""
+        option_selected = input(Fore.YELLOW + """
                 
 --> Select options:
         Type 1 and enter to add other ingredient
@@ -87,7 +89,7 @@ def display_more_options():
         elif option_selected == '2':
             return 2        
         else:
-            print("\n // Please enter a valid option")
+            print(Fore.MAGENTA, "\n // Please enter a valid option")
             continue
 
 
