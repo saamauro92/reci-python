@@ -1,6 +1,12 @@
 from time import sleep
 import re
 from colorama import Fore
+import config
+import requests
+
+API_URL = "https://tasty.p.rapidapi.com/recipes/list"
+API_KEY = config.API_KEY
+
 
 class RecipeClass:
     
@@ -98,6 +104,19 @@ def display_more_options():
             print(Fore.MAGENTA, "\n // Please enter a valid option")
             continue
 
+def make_request(ingredients):
+    """
+    Gets a list of ingredients and make a request to the API 
+    """
+    QUERYSTRING = {"from": "1", "size": "1", "q": ", ".join(ingredients)}
+    HEADERS = {
+        "X-RapidAPI-Key": API_KEY,
+        "X-RapidAPI-Host": "tasty.p.rapidapi.com"
+    }
+    response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING)
+    print(response.json())
+
+
 
 
 def main():
@@ -112,7 +131,9 @@ def main():
     # print(new_recipe.print_data())
 
     ingredients =  ingredient_inputs()
-    print(ingredients)
+    make_request(ingredients)
+
+
 
 main()
 
