@@ -1,6 +1,6 @@
 from time import sleep
 import re
-from colorama import Fore
+from colorama import Fore, Style
 import config
 import requests
 
@@ -33,20 +33,15 @@ def display_program_welcome():
     """
     print(Fore.GREEN,
         """
-              WELCOME TO
-
  █▀▄ ██▀ ▄▀▀ █    █▀▄ ▀▄▀ ▀█▀ █▄█ ▄▀▄ █▄ █
  █▀▄ █▄▄ ▀▄▄ █ ▀▀ █▀   █   █  █ █ ▀▄▀ █ ▀█
 
-             (RECI-PYTHON)
-
-    
-    """)
+    """ + Style.RESET_ALL)
 
     with open('initial_text.txt', 'r') as file:
         for line in file:
-            print(line, flush=True, end='\n') 
-            #sleep(2)
+            print(line, flush=True, end='') 
+            #sleep(1)
 
 def ingredient_inputs():
     """
@@ -55,19 +50,20 @@ def ingredient_inputs():
     ingredients = []
     while True:
         try:
-            ingredient = input(Fore.YELLOW +'\n--> Type and enter your ingredient ex: chicken\n\n')
+            ingredient = input( '\n \n--> Add an ingredient. Ex: chicken\n\n')
             match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
             if match_string == None:
                 raise ValueError(f"Please enter a valid text format")
             else:
                 ingredients.append(ingredient)
-                print(Fore.GREEN,f"\n --You have selected " + ", ".join(ingredients))
+                print(Fore.GREEN,f"\n You have selected " + ", " .join(ingredients)+ Style.RESET_ALL)
                 option = display_more_options() 
                 if option == 1:                  
                     continue
                 elif option == 2:
                     return ingredients
                 elif option == 3:
+                    print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
                     ingredients = []
                     continue            
                                  
@@ -85,14 +81,12 @@ def display_more_options():
     Displays an input and returns the value options 1, 2 or 3
     """
     while True:      
-        option_selected = input(Fore.YELLOW + """
-                
+        option_selected = input(""" 
 --> Select options:
-        Type 1 and enter to add other ingredient
-        Type 2 and enter to get the recipe
-        type 3 to start again   
-            
-                    """)
+      1 To add another ingredient
+      2 To get recipe
+      3 To start again   
+ """)
         
         if option_selected == '1':
             return 1
@@ -101,7 +95,7 @@ def display_more_options():
         elif option_selected == '3':
             return 3  
         else:
-            print(Fore.MAGENTA, "\n // Please enter a valid option")
+            print(Fore.MAGENTA, "\nX Please enter a valid option"+ Style.RESET_ALL)
             continue
 
 def make_request(ingredients):
@@ -109,7 +103,7 @@ def make_request(ingredients):
     Gets a list of ingredients and make a request to the API
     """
     print("LOADING...")
-    QUERYSTRING = {"from": "1", "size": "1", "q": ", ".join(ingredients)}
+    QUERYSTRING = {"from": "1", "size": "10", "q": ", ".join(ingredients)}
     HEADERS = {
         "X-RapidAPI-Key": API_KEY,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
@@ -140,13 +134,13 @@ def main():
 
     display_program_welcome()
     ingredients =  ingredient_inputs()
-    recipe = make_request(ingredients)
-    if recipe:
-        recipe_name = recipe['results'][0]['name']
-        recipe_instructions =  recipe['results'][0]['instructions']
-        new_recipe = RecipeClass( recipe_name,  recipe_instructions)
-        print(new_recipe.print_data())
-
+    while True:
+            recipe = make_request(ingredients)
+            if recipe:
+                recipe_name = recipe['results'][0]['name']
+                recipe_instructions =  recipe['results'][0]['instructions']
+                new_recipe = RecipeClass( recipe_name,  recipe_instructions)
+                print(new_recipe.print_data())
 
 
 main()
