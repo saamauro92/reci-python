@@ -49,7 +49,7 @@ def ingredient_inputs():
     ingredients = []
     while True:
         try:
-            ingredient = input(Fore.YELLOW +'\n--> Type and enter your ingredient\n\n')
+            ingredient = input(Fore.YELLOW +'\n--> Type and enter your ingredient ex: chicken\n\n')
             match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
             if match_string == None:
                 raise ValueError(f"Please enter a valid text format")
@@ -64,7 +64,7 @@ def ingredient_inputs():
                                  
 
         except ValueError as e:
-            print(f"**Error:{e} ")  
+            print(Fore.MAGENTA, f"\n // {e} ")  
             continue
 
 
