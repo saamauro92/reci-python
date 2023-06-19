@@ -1,3 +1,9 @@
-Are you hungry and not sure what to cook ?
-Tell us what ingredientes you have and..
-We will provide you with a recipe ;)
+Reci-Python is a program for recipes!
+
+Usage:  Just type the ingredientes you have 
+
+Example:
+
+Chicken
+
+Let's begin!
