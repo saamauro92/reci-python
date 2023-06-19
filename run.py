@@ -48,10 +48,10 @@ def ingredient_inputs():
     ingredients = []
     while True:
         try:
-            ingredient = input('\nType and enter your ingredient\n')
+            ingredient = input('\n--> Type and enter your ingredient\n')
             match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
             if match_string == None:
-                raise ValueError(f"Please enter a valid text format")
+                raise ValueError(f"--> Please enter a valid text format")
             else:
                 ingredients.append(ingredient)
                 option = display_more_options() 
@@ -76,8 +76,7 @@ def display_more_options():
     while True:      
         option_selected = input("""
                 
-                    \n
-    Select options:
+--> Select options:
         Type 1 and enter to add other ingredient
         Type 2 and enter to get the recipe   
             
@@ -88,7 +87,7 @@ def display_more_options():
         elif option_selected == '2':
             return 2        
         else:
-            print("Please enter a valid option")
+            print("\n // Please enter a valid option")
             continue
 
 
