@@ -12,14 +12,17 @@ class RecipeClass:
     
     """ Creates an instance of recipeClass"""
 
-    def __init__(self, name, instructions):
+    def __init__(self, name, description, instructions):
 
         self.name = name
         self.instructions = instructions
+        self.description = description
 
     def print_data(self):
         return f"""
         {self.name}\n \n
+
+        {self.description}\n \n
 
         Instructions: \n \n
         {self.instructions}
@@ -141,8 +144,9 @@ def main():
             recipe = make_request(ingredients)
             if recipe:
                 recipe_name = recipe['results'][0]['name']
+                recipe_description = recipe['results'][0]['description']
                 recipe_instructions =  recipe['results'][0]['instructions']
-                new_recipe = RecipeClass( recipe_name,  recipe_instructions)
+                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
                 print(new_recipe.print_data())
 
 
