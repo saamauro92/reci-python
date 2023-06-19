@@ -73,12 +73,15 @@ def ingredient_inputs():
 
 
 def display_more_options():
+    """
+    Displays an input and returns the value of it, options 1 or 2 if not returns an error
+    """
     option_selected = int(input("""
             
                 \n
 Select options:
-     1- Add other ingredient
-     2- Get recipe
+     Type 1 and enter to add other ingredient
+     Type 2 and enter to get the recipe   
         
                 """))
      
