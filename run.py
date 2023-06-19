@@ -106,17 +106,29 @@ def display_more_options():
 
 def make_request(ingredients):
     """
-    Gets a list of ingredients and make a request to the API 
+    Gets a list of ingredients and make a request to the API
     """
+    print("LOADING...")
     QUERYSTRING = {"from": "1", "size": "1", "q": ", ".join(ingredients)}
     HEADERS = {
         "X-RapidAPI-Key": API_KEY,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
     }
     response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING)
-    print(response.json())
+    data = response.json()
+    if len(data['results']) == 0:
+        print(Fore.BLUE, """
+        ___________________________________________________
+       |                                                   |
+       | Sorry, no results found.                          |
+       |                                                   |
+       | Please double-check your spelling and try again.  |
+       |___________________________________________________|
 
 
+        """)
+    else:
+        return data
 
 
 def main():
@@ -127,11 +139,13 @@ def main():
     """
 
     display_program_welcome()
-    # new_recipe = RecipeClass("fake recipe", "fake instructions...")
-    # print(new_recipe.print_data())
-
     ingredients =  ingredient_inputs()
-    make_request(ingredients)
+    recipe = make_request(ingredients)
+    if recipe:
+        recipe_name = recipe['results'][0]['name']
+        recipe_instructions =  recipe['results'][0]['instructions']
+        new_recipe = RecipeClass( recipe_name,  recipe_instructions)
+        print(new_recipe.print_data())
 
 
 
