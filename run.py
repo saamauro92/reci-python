@@ -55,7 +55,7 @@ def display_program_welcome():
     with open('initial_text.txt', 'r') as file:
         for line in file:
             print(line, flush=True, end='') 
-            #sleep(1)
+            sleep(0.90)
 
 def ingredient_inputs():
     """
@@ -100,7 +100,7 @@ def display_more_options():
       1 To add another ingredient
       2 To get recipe
       3 To start again   
- """)
+ \n""")
         
         if option_selected == '1':
             return 1
