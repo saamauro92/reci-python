@@ -236,6 +236,7 @@ def main():
                 new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
                 print(new_recipe.print_data())
         elif option_selected == '0':
+            print("Thanks for using RECI-PYTHON, hope to see you again!")
             break
         else:
             error = ErrorAlertClass()
