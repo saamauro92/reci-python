@@ -171,18 +171,23 @@ def main():
     Run all programs functions
 
     """
-    display_menu()
     display_program_welcome()
-    ingredients =  ingredient_inputs()
     while True:
+        option_selected = display_menu()
+        if option_selected == '1':
+            print("Getting recipe by name \\ NOT DEVELOPED YET")
+        elif option_selected == '2':
+            ingredients =  ingredient_inputs()
             recipe = make_request(ingredients)
-            if recipe:
-                recipe_name = recipe['results'][0]['name']
-                recipe_description = recipe['results'][0]['description']
-                recipe_instructions =  recipe['results'][0]['instructions']
-                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-                print(new_recipe.print_data())
-                return False
+            recipe_name = recipe['results'][0]['name']
+            recipe_description = recipe['results'][0]['description']
+            recipe_instructions =  recipe['results'][0]['instructions']
+            new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+            print(new_recipe.print_data())
+        else:
+            print("Please enter a valid option")
+            continue
+
 
 
 main()
