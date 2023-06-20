@@ -146,9 +146,10 @@ def make_request(ingredients):
        |___________________________________________________|
 
 
-        """)
+        """,Style.RESET_ALL)
+            return False
         else:
-            return data
+            return data       
     except requests.exceptions.HTTPError as err:
         print("HTTP Error")
         print(err.args[0])
@@ -186,11 +187,12 @@ def main():
         elif option_selected == '2':
             ingredients =  ingredient_inputs()
             recipe = make_request(ingredients)
-            recipe_name = recipe['results'][0]['name']
-            recipe_description = recipe['results'][0]['description']
-            recipe_instructions =  recipe['results'][0]['instructions']
-            new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-            print(new_recipe.print_data())
+            if recipe != False:
+                recipe_name = recipe['results'][0]['name']
+                recipe_description = recipe['results'][0]['description']
+                recipe_instructions =  recipe['results'][0]['instructions']
+                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+                print(new_recipe.print_data())
         else:
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
