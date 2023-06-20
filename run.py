@@ -177,8 +177,6 @@ def make_request(ingredients):
        |                                                   |
        | Please double-check your spelling and try again.  |
        |___________________________________________________|
-
-
         """,Style.RESET_ALL)
             return False
         else:
