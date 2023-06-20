@@ -80,11 +80,35 @@ def ingredient_inputs():
                 if option == 1:                  
                     continue
                 elif option == 2:
+                    print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
                     return ingredients
                 elif option == 3:
                     print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
                     ingredients = []
                     continue            
+                                 
+
+        except ValueError as e:
+            error = ErrorAlertClass()
+            error.print_error(f"{e}")
+            continue
+
+def recipe_by_food_inputs():
+    """
+    Get a recipe name from input and returns it
+    """
+    food = []
+    while True:
+        try:
+            recipe = input( '\n \n--> Add recipe name. Ex: chicken curry\n\n')
+            match_string = re.match(r'^[a-zA-Z\s]+$', recipe)
+            if match_string == None:
+                raise ValueError(f"Please enter a valid text format")
+            else:
+                food.append(recipe)
+                print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
+                print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
+                return food
                                  
 
         except ValueError as e:
@@ -103,15 +127,14 @@ def display_more_options():
     while True:      
         option_selected = input(""" 
 --> Select options:
-      1 To add another ingredient
+      1 To add another ingredient     3 To start again   
       2 To get recipe
-      3 To start again   
+      
  \n""")
         
         if option_selected == '1':
             return 1
         elif option_selected == '2':
-            print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
             return 2      
         elif option_selected == '3':
             return 3  
@@ -181,9 +204,20 @@ def main():
     """
     display_program_welcome()
     while True:
+
         option_selected = display_menu()
+
         if option_selected == '1':
-            print("Getting recipe by name \\ NOT DEVELOPED YET")
+            food = recipe_by_food_inputs()
+            recipe = make_request(food)
+            if recipe != False:
+                recipe_name = recipe['results'][0]['name']
+                recipe_description = recipe['results'][0]['description']
+                recipe_instructions =  recipe['results'][0]['instructions']
+                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+                print(new_recipe.print_data()) 
+
+
         elif option_selected == '2':
             ingredients =  ingredient_inputs()
             recipe = make_request(ingredients)
