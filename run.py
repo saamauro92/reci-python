@@ -33,8 +33,7 @@ class RecipeClass:
         print("Instructions:")
         for instr in instructions:
             instructions_number+= 1
-            print(f"""
-    {instructions_number}""", instr['display_text'])
+            print(f"\n    {instructions_number}-  {instr['display_text']}")
 
 class ErrorAlertClass:
 
