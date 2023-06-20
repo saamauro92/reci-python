@@ -22,18 +22,18 @@ class RecipeClass:
     def print_data(self):
         wrapper = TextWrapper()
         description =  wrapper.wrap(self.description)
-        print("\nTitle:\n")
-        print(f"     {self.name}\n")
-        print("Description:\n")
+        print("\nTitle:")
+        print(f"     {self.name}")
+        print("\nDescription:")
         for desc in description:
-            print(f"     {desc} \n" )
+            print(f"     {desc}" )
 
         instructions = self.instructions
         instructions_number = 0
-        print("Instructions:")
+        print("\nInstructions:")
         for instr in instructions:
             instructions_number+= 1
-            print(f"\n    {instructions_number}-  {instr['display_text']}")
+            print(f"    {instructions_number}-  {instr['display_text']}")
 
 class ErrorAlertClass:
 
@@ -184,7 +184,7 @@ def make_request(ingredients):
 
 
 def display_menu():
-    option_selected = input(""" 
+    option_selected = input("""\n 
 --> Select options:
       1 Get recipe by name
       2 Get recipe by ingredients
