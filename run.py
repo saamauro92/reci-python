@@ -195,7 +195,7 @@ def make_request(ingredients):
 def display_menu():
     option_selected = input("""\n 
 --> Select options:
-      1 Get recipe by name
+      1 Get recipe by name              0 Exit Program
       2 Get recipe by ingredients
          
  \n""")
@@ -235,6 +235,8 @@ def main():
                 recipe_instructions =  recipe['results'][0]['instructions']
                 new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
                 print(new_recipe.print_data())
+        elif option_selected == '0':
+            break
         else:
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
