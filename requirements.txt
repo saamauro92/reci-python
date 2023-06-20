@@ -15,7 +15,6 @@ colorama==0.4.4
 croniter==1.0.15
 cryptography==3.4.8
 cytoolz==0.12.1
-dbus-python==1.2.18
 distro==1.7.0
 docker==5.0.3
 docker-compose==1.29.2
