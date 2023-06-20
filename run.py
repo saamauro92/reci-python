@@ -62,7 +62,7 @@ def display_program_welcome():
             print(line, flush=True, end='') 
             #sleep(0.90)
 
-def ingredient_inputs():
+def recipe_by_ingredient_inputs():
     """
     Get an ingredient and returns a list
     """
@@ -219,7 +219,7 @@ def main():
 
 
         elif option_selected == '2':
-            ingredients =  ingredient_inputs()
+            ingredients = recipe_by_ingredient_inputs()
             recipe = make_request(ingredients)
             if recipe != False:
                 recipe_name = recipe['results'][0]['name']
