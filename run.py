@@ -4,6 +4,7 @@ from colorama import Fore, Style
 import config
 import requests
 from tqdm import trange
+from textwrap import TextWrapper
 API_URL = "https://tasty.p.rapidapi.com/recipes/list"
 API_KEY = config.API_KEY
 
@@ -19,14 +20,24 @@ class RecipeClass:
         self.description = description
 
     def print_data(self):
-        return f"""
-        {self.name}\n \n
+        wrapper = TextWrapper()
+        description =  wrapper.wrap(self.description)
+        print("\nTitle:\n")
+        print(f"     {self.name}\n")
+        print("Description:\n")
+        for desc in description:
+            print(f"     {desc} \n" )
 
-        {self.description}\n \n
+        instructions = self.instructions
+        instructions_number = 0
+        print("Instructions:")
+        for instr in instructions:
+            instructions_number+= 1
+            print(f"""
+    {instructions_number}""", instr['display_text'])
+        
 
-        Instructions: \n \n
-        {self.instructions}
-        """
+        
 
 def display_program_welcome():
 
@@ -148,6 +159,7 @@ def main():
                 recipe_instructions =  recipe['results'][0]['instructions']
                 new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
                 print(new_recipe.print_data())
+                return False
 
 
 main()
