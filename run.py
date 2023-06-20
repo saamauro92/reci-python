@@ -44,12 +44,6 @@ class ErrorAlertClass:
         
         
 
-
-
-    
-
-        
-
 def display_program_welcome():
 
     """
@@ -94,7 +88,8 @@ def ingredient_inputs():
                                  
 
         except ValueError as e:
-            print(Fore.RED, f"\n/!\ {e} ", Style.RESET_ALL)  
+            error = ErrorAlertClass()
+            error.print_error(f"{e}")
             continue
 
 
@@ -121,7 +116,8 @@ def display_more_options():
         elif option_selected == '3':
             return 3  
         else:
-            print(Fore.RED, "\n/!\ Please enter a valid option"+ Style.RESET_ALL)
+            error = ErrorAlertClass()
+            error.print_error("Please enter a valid option")
             continue
 
 def make_request(ingredients):
@@ -196,7 +192,8 @@ def main():
             new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
             print(new_recipe.print_data())
         else:
-            print("Please enter a valid option")
+            error = ErrorAlertClass()
+            error.print_error("Please enter a valid option")
             continue
 
 
