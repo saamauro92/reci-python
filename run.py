@@ -35,6 +35,17 @@ class RecipeClass:
             instructions_number+= 1
             print(f"    {instructions_number}-  {instr['display_text']}")
 
+        print("""
+                       _                                     ___  
+                _     | |                                   / _ \ 
+ ____    ___  _| |_   | |__   _____  ____   ____   _   _   (_( ) )
+|  _ \  / _ \(_   _)  |  _ \ (____ ||  _ \ |  _ \ | | | |     (_/ 
+| | | || |_| | | |_   | | | |/ ___ || |_| || |_| || |_| |     _   
+|_| |_| \___/   \__)  |_| |_|\_____||  __/ |  __/  \__  |    (_)  
+                                    |_|    |_|    (____/          
+        Try again!
+        """)
+
 class ErrorAlertClass:
 
     """ Creates an instance for ErrorAlertClass"""
