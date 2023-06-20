@@ -55,7 +55,7 @@ def display_program_welcome():
     with open('initial_text.txt', 'r') as file:
         for line in file:
             print(line, flush=True, end='') 
-            sleep(0.90)
+            #sleep(0.90)
 
 def ingredient_inputs():
     """
@@ -122,13 +122,15 @@ def make_request(ingredients):
         "X-RapidAPI-Key": API_KEY,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
     }
-    
-    response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING)
-    for i in trange(100):
-         sleep(0.03)
-    data = response.json()
-    if len(data['results']) == 0:
-        print(Fore.BLUE, """
+    try:
+        response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING, timeout=60)
+        response.raise_for_status()
+
+        for i in trange(100):
+            sleep(0.03)
+        data = response.json()
+        if len(data['results']) == 0:
+            print(Fore.BLUE, """
         ___________________________________________________
        |                                                   |
        | Sorry, no results found.                          |
@@ -138,8 +140,21 @@ def make_request(ingredients):
 
 
         """)
-    else:
-        return data
+        else:
+            return data
+    except requests.exceptions.HTTPError as err:
+        print("HTTP Error")
+        print(err.args[0])
+    except requests.exceptions.Timeout:
+        print("Time out")
+    except requests.exceptions.ConnectionError:
+        print("Connection error")
+    except requests.exceptions.RequestException:
+        print("Exception request")
+
+
+        
+
 
 
 def main():
