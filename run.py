@@ -35,7 +35,18 @@ class RecipeClass:
             instructions_number+= 1
             print(f"""
     {instructions_number}""", instr['display_text'])
+
+class ErrorAlertClass:
+
+    """ Creates an instance for ErrorAlertClass"""
+    def print_error(self, error):
+        return print(Fore.RED, f"\n/!\ {error} ", Style.RESET_ALL)
         
+        
+
+
+
+    
 
         
 
