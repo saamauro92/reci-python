@@ -153,7 +153,15 @@ def make_request(ingredients):
         print("Exception request")
 
 
-        
+def display_menu():
+    option_selected = input(""" 
+--> Select options:
+      1 Get recipe by name
+      2 Get recipe by ingredients
+         
+ \n""")
+    return option_selected
+
 
 
 
@@ -163,7 +171,7 @@ def main():
     Run all programs functions
 
     """
-
+    display_menu()
     display_program_welcome()
     ingredients =  ingredient_inputs()
     while True:
