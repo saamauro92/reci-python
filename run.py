@@ -103,28 +103,6 @@ def recipe_by_ingredient_inputs():
             error.print_error(f"{e}")
             continue
 
-def recipe_by_food_inputs():
-    """
-    Get a recipe name from input and returns it
-    """
-    food = []
-    while True:
-        try:
-            recipe = input( '\n \n--> Add recipe name. Ex: chicken curry\n\n')
-            match_string = re.match(r'^[a-zA-Z\s]+$', recipe)
-            if match_string is None:
-                raise ValueError(f"Please enter a valid text format")
-            else:
-                food.append(recipe)
-                print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
-                print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
-                return food
-                                 
-
-        except ValueError as e:
-            error = ErrorAlertClass()
-            error.print_error(f"{e}")
-            continue
 
 def recipe_input(by_type):
     """
@@ -147,7 +125,7 @@ def recipe_input(by_type):
             else:
                 food.append(type_of_food)
                 print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
-                
+
                 if by_type == 'ingredient':
                     option = display_more_options()
                     if option == 1:                  
