@@ -218,7 +218,7 @@ def main():
         if option_selected == '1':
             food = recipe_by_food_inputs()
             recipe = make_request(food)
-            if recipe != False:
+            if recipe is not False:
                 recipe_name = recipe['results'][0]['name']
                 recipe_description = recipe['results'][0]['description']
                 recipe_instructions =  recipe['results'][0]['instructions']
@@ -229,7 +229,7 @@ def main():
         elif option_selected == '2':
             ingredients = recipe_by_ingredient_inputs()
             recipe = make_request(ingredients)
-            if recipe != False:
+            if recipe is not False:
                 recipe_name = recipe['results'][0]['name']
                 recipe_description = recipe['results'][0]['description']
                 recipe_instructions =  recipe['results'][0]['instructions']
