@@ -95,7 +95,7 @@ def recipe_input(by_type):
                 food.append(type_of_food)
                 print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
 
-                if by_type == 'ingredient':
+                if by_type == 'ingredients':
                     option = display_more_options()
                     if option == 1:                  
                         continue
@@ -206,7 +206,7 @@ def main():
         option_selected = display_menu()
 
         if option_selected == '1':
-            food = recipe_by_food_inputs()
+            food = recipe_input('recipe')
             recipe = make_request(food)
             if recipe is not False:
                 recipe_name = recipe['results'][0]['name']
@@ -217,7 +217,7 @@ def main():
 
 
         elif option_selected == '2':
-            ingredients = recipe_by_ingredient_inputs()
+            ingredients = recipe_input('ingredients')
             recipe = make_request(ingredients)
             if recipe is not False:
                 recipe_name = recipe['results'][0]['name']
