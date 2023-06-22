@@ -126,6 +126,49 @@ def recipe_by_food_inputs():
             error.print_error(f"{e}")
             continue
 
+def recipe_input(by_type):
+    """
+    Gets a recipe or ingredients and either return the recipe name or display a list of options
+    """
+    food = []
+    while True:
+        try:
+            if by_type == "recipe":
+                type_of_food = input( '\n \n--> Add recipe name. Ex: chicken curry\n\n')
+            elif by_type == "ingredients":
+                type_of_food = input( '\n \n--> Add an ingredient. Ex: chicken\n\n')
+            else:
+                raise ValueError("Invalid input type")
+
+            match_string = re.match(r'^[a-zA-Z\s]+$', type_of_food)
+
+            if match_string is None:
+                raise ValueError("Please enter a valid text format")
+            else:
+                food.append(type_of_food)
+                print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
+                
+                if by_type == 'ingredient':
+                    option = display_more_options()
+                    if option == 1:                  
+                        continue
+                    elif option == 2:
+                        print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
+                        return food
+                    elif option == 3:
+                        print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
+                        food = []
+                        continue    
+                elif by_type == 'recipe':
+                    print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
+                    return food
+       
+        except ValueError as e:
+            error = ErrorAlertClass()
+            error.print_error(f"{e}")
+            continue
+
+
 
  
 
