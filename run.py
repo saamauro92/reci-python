@@ -105,7 +105,7 @@ def recipe_input(by_type):
                     elif option == 3:
                         print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
                         food = []
-                        continue    
+                        return False    
                 elif by_type == 'recipe':
                     print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
                     return food
@@ -201,14 +201,20 @@ def process_recipe_input(input_type):
     elif input_type == "ingredients":
         ingredients = recipe_input('ingredients')
         food = ingredients
+    
+    if food is not False:
+        recipe = make_request(food)   
+        if recipe is not False:
+            recipe_name = recipe['results'][0]['name']
+            recipe_description = recipe['results'][0]['description']
+            recipe_instructions =  recipe['results'][0]['instructions']
+            new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+            print(new_recipe.print_data())
+    else:
+        return None
 
-    recipe = make_request(food)
-    if recipe is not False:
-        recipe_name = recipe['results'][0]['name']
-        recipe_description = recipe['results'][0]['description']
-        recipe_instructions =  recipe['results'][0]['instructions']
-        new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-        print(new_recipe.print_data())
+
+
 
 
 def main():
