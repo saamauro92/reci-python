@@ -184,7 +184,7 @@ def make_request(ingredients):
 
 def display_menu():
     option_selected = input("\n"+ Fore.CYAN +""" 
---> """ + Style.RESET_ALL + """Select options:
+--> """ + Style.RESET_ALL + """Select option:
       1 Get recipe by name              0 Exit Program
       2 Get recipe by ingredients
          
