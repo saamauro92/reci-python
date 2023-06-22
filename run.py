@@ -192,6 +192,23 @@ def display_menu():
     return option_selected
 
 
+def process_recipe_input(input_type):
+    """
+    Process recipe inputs based on the input type and returns the recipe
+    """
+    if input_type == "recipe":
+        food = recipe_input('recipe')
+    elif input_type == "ingredients":
+        ingredients = recipe_input('ingredients')
+        food = ingredients
+
+    recipe = make_request(food)
+    if recipe is not False:
+        recipe_name = recipe['results'][0]['name']
+        recipe_description = recipe['results'][0]['description']
+        recipe_instructions =  recipe['results'][0]['instructions']
+        new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+        print(new_recipe.print_data())
 
 
 def main():
@@ -206,25 +223,9 @@ def main():
         option_selected = display_menu()
 
         if option_selected == '1':
-            food = recipe_input('recipe')
-            recipe = make_request(food)
-            if recipe is not False:
-                recipe_name = recipe['results'][0]['name']
-                recipe_description = recipe['results'][0]['description']
-                recipe_instructions =  recipe['results'][0]['instructions']
-                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-                print(new_recipe.print_data()) 
-
-
+            process_recipe_input("recipe")
         elif option_selected == '2':
-            ingredients = recipe_input('ingredients')
-            recipe = make_request(ingredients)
-            if recipe is not False:
-                recipe_name = recipe['results'][0]['name']
-                recipe_description = recipe['results'][0]['description']
-                recipe_instructions =  recipe['results'][0]['instructions']
-                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-                print(new_recipe.print_data())
+            process_recipe_input("ingredients")
         elif option_selected == '0':
             print("Thanks for using RECI-PYTHON, hope to see you again!")
             break
@@ -232,6 +233,7 @@ def main():
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
             continue
+ 
 
 
 
