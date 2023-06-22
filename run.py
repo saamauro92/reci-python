@@ -72,37 +72,6 @@ def display_program_welcome():
             print(line, flush=True, end='') 
             #sleep(0.90)
 
-def recipe_by_ingredient_inputs():
-    """
-    Get an ingredient and returns a list
-    """
-    ingredients = []
-    while True:
-        try:
-            ingredient = input( '\n \n--> Add an ingredient. Ex: chicken\n\n')
-            match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
-            if match_string is None:
-                raise ValueError(f"Please enter a valid text format")
-            else:
-                ingredients.append(ingredient)
-                print(Fore.GREEN,f"\n You have selected " + ", " .join(ingredients)+ Style.RESET_ALL)
-                option = display_more_options() 
-                if option == 1:                  
-                    continue
-                elif option == 2:
-                    print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
-                    return ingredients
-                elif option == 3:
-                    print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
-                    ingredients = []
-                    continue            
-                                 
-
-        except ValueError as e:
-            error = ErrorAlertClass()
-            error.print_error(f"{e}")
-            continue
-
 
 def recipe_input(by_type):
     """
