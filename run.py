@@ -81,7 +81,7 @@ def recipe_by_ingredient_inputs():
         try:
             ingredient = input( '\n \n--> Add an ingredient. Ex: chicken\n\n')
             match_string = re.match(r'^[a-zA-Z\s]+$', ingredient)
-            if match_string == None:
+            if match_string is None:
                 raise ValueError(f"Please enter a valid text format")
             else:
                 ingredients.append(ingredient)
