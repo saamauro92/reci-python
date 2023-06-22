@@ -81,9 +81,9 @@ def recipe_input(by_type):
     while True:
         try:
             if by_type == "recipe":
-                type_of_food = input( '\n \n--> Add recipe name. Ex: chicken curry\n\n')
+                type_of_food = input( "\n\n" + Fore.CYAN + "--> " + Style.RESET_ALL + "Add recipe name. Ex: chicken curry\n\n")
             elif by_type == "ingredients":
-                type_of_food = input( '\n \n--> Add an ingredient. Ex: chicken\n\n')
+                type_of_food = input("\n\n" + Fore.CYAN + "--> " + Style.RESET_ALL + "Add one ingredient. Ex: chicken\n\n")
             else:
                 raise ValueError("Invalid input type")
 
@@ -183,8 +183,8 @@ def make_request(ingredients):
 
 
 def display_menu():
-    option_selected = input("""\n 
---> Select options:
+    option_selected = input("\n"+ Fore.CYAN +""" 
+--> """ + Style.RESET_ALL + """Select options:
       1 Get recipe by name              0 Exit Program
       2 Get recipe by ingredients
          
