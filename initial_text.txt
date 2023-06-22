@@ -1,9 +1,14 @@
 Reci-Python is a program for recipes!
 
-Usage:  Just type the ingredientes you have 
+Usage:  Select your option and just type
+the recipe or the ingredientes you have 
 
 Example:
 
-Chicken
+Chicken curry 
+
+or
+
+ham
 
 Let's begin!
