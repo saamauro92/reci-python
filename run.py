@@ -35,7 +35,7 @@ class RecipeClass:
             instructions_number+= 1
             print(f"    {instructions_number}-  {instr['display_text']}")
 
-        print("""
+        return """
                        _                                     ___  
                 _     | |                                   / _ \ 
  ____    ___  _| |_   | |__   _____  ____   ____   _   _   (_( ) )
@@ -44,7 +44,7 @@ class RecipeClass:
 |_| |_| \___/   \__)  |_| |_|\_____||  __/ |  __/  \__  |    (_)  
                                     |_|    |_|    (____/          
         Try again!
-        """)
+        """
 
 class ErrorAlertClass:
 
