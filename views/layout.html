@@ -8,10 +8,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <title>Python Terminal by Code Institute</title>
+    <title>Reci-Python -</title>
     <style>
         body {
             font-family: Arial;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            width: 100%;
+            background-color: #000;
+            margin-top:5%;
         }
 
         /**
@@ -158,12 +166,17 @@
         button {
             width: 200px;
             height: 40px;
-            background-color: #E84610;
-            border: 1px solid grey;
+            background-color: #000;
+            border: 1px solid #fff;
             color: white;
             text-transform: uppercase;
             margin: 10px;
             border-radius: 8px;
+            position: absolute;
+            bottom: 30%;
+        }
+        button:hover {
+            background-color: rgb(97, 93, 93);
         }
     </style>
 </head>
