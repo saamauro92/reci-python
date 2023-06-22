@@ -8,7 +8,6 @@ from textwrap import TextWrapper
 API_URL = "https://tasty.p.rapidapi.com/recipes/list"
 API_KEY = config.API_KEY
 
-
 class RecipeClass:
     
     """ Creates an instance of recipeClass"""
@@ -51,7 +50,6 @@ class ErrorAlertClass:
     """ Creates an instance for ErrorAlertClass"""
     def print_error(self, error):
         return print(Fore.RED, f"\n/!\ {error} ", Style.RESET_ALL)
-        
         
 
 def display_program_welcome():
@@ -114,11 +112,6 @@ def recipe_input(by_type):
             error = ErrorAlertClass()
             error.print_error(f"{e}")
             continue
-
-
-
- 
-
 
 def display_more_options():
     """
@@ -213,10 +206,6 @@ def process_recipe_input(input_type):
     else:
         return None
 
-
-
-
-
 def main():
     
     """
@@ -240,8 +229,5 @@ def main():
             error.print_error("Please enter a valid option")
             continue
  
-
-
-
 main()
 
