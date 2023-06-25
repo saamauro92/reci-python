@@ -149,8 +149,8 @@ def make_request(ingredients):
         response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING, timeout=60)
         response.raise_for_status()
 
-       # for i in trange(100):
-           # sleep(0.03)
+        for i in trange(100):
+            sleep(0.03)
         data = response.json()
         if len(data['results']) == 0:
             print(Fore.BLUE, """
