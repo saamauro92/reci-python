@@ -207,7 +207,10 @@ def select_recipe_options(recipes):
             recipe_counter = 1
             for res in recipes['results']:
                 print(f"{recipe_counter} - {res['name']}")
-                recipe_counter+= 1               
+                recipe_counter+= 1
+                # get a max of 5 recipes
+                if recipe_counter == 6:
+                    break               
             print("\n0 - To go back to main")
             recipe_choosen = input("\n"+ Fore.CYAN +"--> " + Style.RESET_ALL + "Select the recipe you want \n")
             if recipe_choosen == "0":
