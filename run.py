@@ -118,8 +118,8 @@ def display_more_options():
     Displays an input and returns the value options 1, 2 or 3
     """
     while True:      
-        option_selected = input(""" 
---> Select options:
+        option_selected = input(
+"\n" +   Fore.CYAN + "--> " + Style.RESET_ALL + """Select options:
       1 To add another ingredient     3 To start again   
       2 To get recipe
       
