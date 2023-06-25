@@ -203,7 +203,7 @@ def select_recipe_options(recipes):
     Gets the recipes and display a list of them in order to choose them
     """
     while True:     
-            print("\n We have prepared this recipes: \n")
+            print("\n We have prepared these recipes: \n")
             recipe_counter = 1
             for res in recipes['results']:
                 print(f"{recipe_counter} - {res['name']}")
