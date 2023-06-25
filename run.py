@@ -5,7 +5,7 @@ import config
 import requests
 from tqdm import trange
 from textwrap import TextWrapper
-API_URL = "https://tasty.p.rapidapi.com/recipes/list"
+API_URL = config.API_URL
 API_KEY = config.API_KEY
 
 class RecipeClass:
@@ -193,8 +193,6 @@ def select_recipe_options(recipes):
     Gets the recipes and display a list of them in order to choose them
     """
     while True:     
-        # print(recipe['results'])
-        # recipe_amount = [ res['name'] for res in recipe['results']]
             print("\n We have prepared this recipes: \n")
             recipe_counter = 1
             for res in recipes['results']:
