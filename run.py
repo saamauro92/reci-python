@@ -43,7 +43,7 @@ class RecipeClass:
 |_| |_| \___/   \__)  |_| |_|\_____||  __/ |  __/  \__  |    (_)  
                                     |_|    |_|    (____/          
         Try again!
-        """
+        """ + Fore.LIGHTYELLOW_EX + "\n ** SCROLL UP TO SEE FULL RECIPE *** " + Style.RESET_ALL
 
 class ErrorAlertClass:
 
