@@ -8,8 +8,8 @@ from textwrap import TextWrapper
 API_URL = config.API_URL
 API_KEY = config.API_KEY
 
+
 class RecipeClass:
-    
     """ Creates an instance of recipeClass"""
 
     def __init__(self, name, description, instructions):
@@ -20,18 +20,18 @@ class RecipeClass:
 
     def print_data(self):
         wrapper = TextWrapper()
-        description =  wrapper.wrap(self.description)
+        description = wrapper.wrap(self.description)
         print("\nTitle:")
         print(f"     {self.name}")
         print("\nDescription:")
         for desc in description:
-            print(f"     {desc}" )
+            print(f"     {desc}")
 
         instructions = self.instructions
         instructions_number = 0
         print("\nInstructions:")
         for instr in instructions:
-            instructions_number+= 1
+            instructions_number += 1
             print(f"    {instructions_number}-  {instr['display_text']}")
 
         return """
