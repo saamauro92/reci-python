@@ -149,8 +149,8 @@ def make_request(ingredients):
         response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING, timeout=60)
         response.raise_for_status()
 
-        for i in trange(100):
-            sleep(0.03)
+       # for i in trange(100):
+           # sleep(0.03)
         data = response.json()
         if len(data['results']) == 0:
             print(Fore.BLUE, """
@@ -188,6 +188,32 @@ def display_menu():
     return option_selected
 
 
+def select_recipe_options(recipes):
+    """
+    Gets the recipes and display a list of them in order to choose them
+    """
+    while True:     
+        # print(recipe['results'])
+        # recipe_amount = [ res['name'] for res in recipe['results']]
+            print("\n We have prepared this recipes: \n")
+            recipe_counter = 1
+            for res in recipes['results']:
+                print(f"{recipe_counter} - {res['name']}")
+                recipe_counter+= 1               
+            print("\n0 - To go back to main")
+            recipe_choosen = input("\n"+ Fore.CYAN +"--> " + Style.RESET_ALL + "Select the recipe you want \n")
+            if recipe_choosen == "0":
+                break  
+            elif recipe_choosen.isdigit() and int(recipe_choosen) in range(0, len(recipes['results']) + 1):
+                recipe_name = recipes['results'][int(recipe_choosen) -1 ]['name']
+                recipe_description = recipes['results'][int(recipe_choosen) - 1]['description']
+                recipe_instructions =  recipes['results'][int(recipe_choosen) - 1]['instructions']
+                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+                print(new_recipe.print_data())
+            else:
+                error = ErrorAlertClass()
+                error.print_error(f"Please select a valid option between 1 and {len(recipes['results'])}")
+
 def process_recipe_input(input_type):
     """
     Process recipe inputs based on the input type and returns the recipe
@@ -199,13 +225,9 @@ def process_recipe_input(input_type):
         food = ingredients
     
     if food is not False:
-        recipe = make_request(food)   
-        if recipe is not False:
-            recipe_name = recipe['results'][0]['name']
-            recipe_description = recipe['results'][0]['description']
-            recipe_instructions =  recipe['results'][0]['instructions']
-            new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-            print(new_recipe.print_data())
+        recipes = make_request(food)   
+        if recipes is not False: 
+            select_recipe_options(recipes)       
     else:
         return None
 
