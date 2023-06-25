@@ -34,16 +34,10 @@ class RecipeClass:
             instructions_number += 1
             print(f"    {instructions_number}-  {instr['display_text']}")
 
-        return """
-                       _                                     ___  
-                _     | |                                   / _ \ 
- ____    ___  _| |_   | |__   _____  ____   ____   _   _   (_( ) )
-|  _ \  / _ \(_   _)  |  _ \ (____ ||  _ \ |  _ \ | | | |     (_/ 
-| | | || |_| | | |_   | | | |/ ___ || |_| || |_| || |_| |     _   
-|_| |_| \___/   \__)  |_| |_|\_____||  __/ |  __/  \__  |    (_)  
-                                    |_|    |_|    (____/          
-        Try again!
-        """ + Fore.LIGHTYELLOW_EX + "\n ** SCROLL UP TO SEE FULL RECIPE *** " + Style.RESET_ALL
+        with open("not_happy.txt", 'r') as file:
+            not_happy_art_text = file.read()
+        print(not_happy_art_text)
+        return Fore.LIGHTYELLOW_EX + "\n ** SCROLL UP TO SEE FULL RECIPE *** " + Style.RESET_ALL
 
 class ErrorAlertClass:
 
