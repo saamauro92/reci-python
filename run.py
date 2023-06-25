@@ -32,8 +32,8 @@ class RecipeClass:
         print("\nInstructions:")
         for instr in instructions:
             instructions_number += 1
-            print(f"    {instructions_number}-  {instr['display_text']}")
-
+            print(f"    {instructions_number}-  {instr['display_text']}")       
+        # print art text not happy? try again
         with open("not_happy.txt", 'r') as file:
             not_happy_art_text = file.read()
         print(not_happy_art_text)
@@ -52,12 +52,9 @@ def display_program_welcome():
     Prints program title.
     Gets initial_text file and prints line every 2 seconds
     """
-    print(Fore.GREEN,
-        """
- █▀▄ ██▀ ▄▀▀ █    █▀▄ ▀▄▀ ▀█▀ █▄█ ▄▀▄ █▄ █
- █▀▄ █▄▄ ▀▄▄ █ ▀▀ █▀   █   █  █ █ ▀▄▀ █ ▀█
-
-    """ + Style.RESET_ALL)
+    with open("logo.txt", "r") as file:
+        logo_art = file.read()
+    print(Fore.GREEN, logo_art + Style.RESET_ALL)
 
     with open('initial_text.txt', 'r') as file:
         for line in file:
