@@ -188,6 +188,16 @@ def display_menu():
     return option_selected
 
 
+def recipe_data_format(recipe):
+    """
+    Get a recipe data and creates an instance of RecipeClass with the data
+    """
+    recipe_name = recipe['name']
+    recipe_description = recipe['description']
+    recipe_instructions =  recipe['instructions']
+    new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+    print(new_recipe.print_data())
+
 def select_recipe_options(recipes):
     """
     Gets the recipes and display a list of them in order to choose them
@@ -203,11 +213,7 @@ def select_recipe_options(recipes):
             if recipe_choosen == "0":
                 break  
             elif recipe_choosen.isdigit() and int(recipe_choosen) in range(0, len(recipes['results']) + 1):
-                recipe_name = recipes['results'][int(recipe_choosen) -1 ]['name']
-                recipe_description = recipes['results'][int(recipe_choosen) - 1]['description']
-                recipe_instructions =  recipes['results'][int(recipe_choosen) - 1]['instructions']
-                new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
-                print(new_recipe.print_data())
+                recipe_data_format(recipes['results'][int(recipe_choosen) -1 ])
             else:
                 error = ErrorAlertClass()
                 error.print_error(f"Please select a valid option between 1 and {len(recipes['results'])}")
