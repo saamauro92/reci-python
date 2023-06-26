@@ -249,7 +249,6 @@ def process_recipe_input(input_type):
 
 
 def main():
-    
     """
     Run all programs functions
 
@@ -270,6 +269,5 @@ def main():
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
             continue
- 
 main()
 
