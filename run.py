@@ -5,6 +5,7 @@ import config
 import requests
 from tqdm import trange
 from textwrap import TextWrapper
+
 API_URL = config.API_URL
 API_KEY = config.API_KEY
 
@@ -62,7 +63,7 @@ def display_program_welcome():
     with open('initial_text.txt', 'r') as file:
         for line in file:
             print(line, flush=True, end='') 
-            #sleep(0.90)
+
 
 
 def recipe_input(by_type):
