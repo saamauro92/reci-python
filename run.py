@@ -185,12 +185,11 @@ def display_menu():
     """
     This function display the main menu input that returns the selected option
     """
-    option_selected = input("\n"+ Fore.CYAN +""" 
---> """ + Style.RESET_ALL + """Select option:
-      1 Get recipe by name              0 Exit Program
-      2 Get recipe by ingredients
-         
- \n""")
+    option_selected = input(
+        f"\n {Fore.CYAN}" +
+        f"-->{Style.RESET_ALL} Select option: \n" +
+        "      1 Get recipe by name              0 Exit Program\n"
+        "      2 Get recipe by ingredients \n")
     return option_selected
 
 
