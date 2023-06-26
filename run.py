@@ -207,24 +207,29 @@ def select_recipe_options(recipes):
     """
     Gets the recipes and display a list of them in order to choose them
     """
-    while True:     
-            print("\n We have prepared these recipes: \n")
-            recipe_counter = 1
-            for res in recipes['results']:
-                print(f"{recipe_counter} - {res['name']}")
-                recipe_counter+= 1
-                # get a max of 5 recipes
-                if recipe_counter == 6:
-                    break               
-            print("\n0 - To go back to main")
-            recipe_choosen = input("\n"+ Fore.CYAN +"--> " + Style.RESET_ALL + "Select the recipe you want \n")
-            if recipe_choosen == "0":
-                break  
-            elif recipe_choosen.isdigit() and int(recipe_choosen) in range(0, len(recipes['results']) + 1):
-                recipe_data_format(recipes['results'][int(recipe_choosen) -1 ])
-            else:
-                error = ErrorAlertClass()
-                error.print_error(f"Please select a valid option between 1 and {len(recipes['results'])}")
+    while True:
+        print("\n We have prepared these recipes: \n")
+        recipe_counter = 1
+        for res in recipes['results']:
+            print(f"{recipe_counter} - {res['name']}")
+            recipe_counter += 1
+            # get a max of 5 recipes
+            if recipe_counter == 6:
+                break
+        print("\n0 - To go back to main")
+        recipe_choosen = input(
+            "\n" + Fore.CYAN + "--> " + Style.RESET_ALL +
+            "Select the recipe you want \n")
+        if recipe_choosen == "0":
+            break
+        elif (recipe_choosen.isdigit() and
+                int(recipe_choosen) in
+                range(0, len(recipes['results']) + 1)):
+            recipe_data_format(recipes['results'][int(recipe_choosen) - 1])
+        else:
+            error = ErrorAlertClass()
+            error.print_error(f"Please select a valid option")
+                                  
 
 def process_recipe_input(input_type):
     """
