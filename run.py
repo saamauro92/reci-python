@@ -34,7 +34,7 @@ class RecipeClass:
         for instr in instructions:
             instructions_number += 1
             print(f"    {instructions_number}-  {instr['display_text']}")
-        # print art text not happy? try again                   
+        # print art text not happy? try again
         with open("not_happy.txt", 'r') as file:
             not_happy_art_text = file.read()
         print(not_happy_art_text)
