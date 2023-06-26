@@ -68,15 +68,18 @@ def display_program_welcome():
 
 def recipe_input(by_type):
     """
-    Gets a recipe or ingredients and either return the recipe name or display a list of options
+    Gets a recipe or ingredients and either return
+    the recipe name or display a list of options
     """
     food = []
     while True:
         try:
             if by_type == "recipe":
-                type_of_food = input( "\n\n" + Fore.CYAN + "--> " + Style.RESET_ALL + "Add recipe name. Ex: chicken curry\n\n")
+                type_of_food = input(f"""\n\n{Fore.CYAN}-->
+                {Style.RESET_ALL} Add recipe name. Ex: chicken curry\n\n""")
             elif by_type == "ingredients":
-                type_of_food = input("\n\n" + Fore.CYAN + "--> " + Style.RESET_ALL + "Add one ingredient. Ex: chicken\n\n")
+                type_of_food = input(f"""\n\n{Fore.CYAN}-->
+                {Style.RESET_ALL} Add one ingredient. Ex: chicken\n\n""")
             else:
                 raise ValueError("Invalid input type")
 
@@ -86,21 +89,27 @@ def recipe_input(by_type):
                 raise ValueError("Please enter a valid text format")
             else:
                 food.append(type_of_food)
-                print(Fore.GREEN,f"\n You have selected " + ", " .join(food)+ Style.RESET_ALL)
-
+                print(Fore.GREEN, "\n You have selected " + ", ".join(food)
+                                                            + Style.RESET_ALL)
                 if by_type == 'ingredients':
                     option = display_more_options()
                     if option == 1:                  
                         continue
                     elif option == 2:
-                        print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
+                        print(f"""{Fore.GREEN}
+                        \n Preparing your recipe... \n 
+                        {Style.RESET_ALL}""")
                         return food
                     elif option == 3:
-                        print(Fore.GREEN, "\n Starting again...", Style.RESET_ALL)
+                        print(f"""{Fore.GREEN}
+                        \n Starting again...
+                        {Style.RESET_ALL}""")
                         food = []
                         return False    
                 elif by_type == 'recipe':
-                    print(Fore.GREEN, "\n Preparing your recipe... \n", Style.RESET_ALL)
+                    print(f"""{Fore.GREEN}
+                    \n Preparing your recipe... \n
+                    {Style.RESET_ALL}""")
                     return food
        
         except ValueError as e:
