@@ -93,11 +93,11 @@ def recipe_input(by_type):
                                                             + Style.RESET_ALL)
                 if by_type == 'ingredients':
                     option = display_more_options()
-                    if option == 1:                  
+                    if option == 1:
                         continue
                     elif option == 2:
                         print(f"""{Fore.GREEN}
-                        \n Preparing your recipe... \n 
+                        \n Preparing your recipe... \n
                         {Style.RESET_ALL}""")
                         return food
                     elif option == 3:
@@ -105,13 +105,12 @@ def recipe_input(by_type):
                         \n Starting again...
                         {Style.RESET_ALL}""")
                         food = []
-                        return False    
+                        return False
                 elif by_type == 'recipe':
                     print(f"""{Fore.GREEN}
                     \n Preparing your recipe... \n
                     {Style.RESET_ALL}""")
                     return food
-       
         except ValueError as e:
             error = ErrorAlertClass()
             error.print_error(f"{e}")
@@ -121,25 +120,23 @@ def display_more_options():
     """
     Displays an input and returns the value options 1, 2 or 3
     """
-    while True:      
-        option_selected = input(
-"\n" +   Fore.CYAN + "--> " + Style.RESET_ALL + """Select options:
-      1 To add another ingredient     3 To start again   
+    while True:
+        option_selected = input(f"""
+        \n    {Fore.CYAN}  -->   {Style.RESET_ALL} Select options:
+      1 To add another ingredient     3 To start again
       2 To get recipe
-      
- \n""")
-        
+\n""")      
         if option_selected == '1':
             return 1
         elif option_selected == '2':
-            return 2      
+            return 2 
         elif option_selected == '3':
-            return 3  
+            return 3
         else:
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
             continue
-
+    
 def make_request(ingredients):
     """
     Gets a list of ingredients and make a request to the API
