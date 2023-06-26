@@ -48,7 +48,7 @@ class ErrorAlertClass:
     """ Creates an instance for ErrorAlertClass"""
     def print_error(self, error):
         return print(Fore.RED, f"\n \U0001F6AB {error} ", Style.RESET_ALL)
-        
+
 
 def display_program_welcome():
 
@@ -62,8 +62,7 @@ def display_program_welcome():
 
     with open('initial_text.txt', 'r') as file:
         for line in file:
-            print(line, flush=True, end='') 
-
+            print(line, flush=True, end='')
 
 
 def recipe_input(by_type):
