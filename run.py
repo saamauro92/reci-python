@@ -240,13 +240,13 @@ def process_recipe_input(input_type):
     elif input_type == "ingredients":
         ingredients = recipe_input('ingredients')
         food = ingredients
-    
     if food is not False:
-        recipes = make_request(food)   
-        if recipes is not False: 
-            select_recipe_options(recipes)       
+        recipes = make_request(food)
+        if recipes is not False:
+            select_recipe_options(recipes)
     else:
         return None
+
 
 def main():
     
