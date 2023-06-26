@@ -125,11 +125,11 @@ def display_more_options():
         \n    {Fore.CYAN}  -->   {Style.RESET_ALL} Select options:
       1 To add another ingredient     3 To start again
       2 To get recipe
-\n""")      
+\n""")
         if option_selected == '1':
             return 1
         elif option_selected == '2':
-            return 2 
+            return 2
         elif option_selected == '3':
             return 3
         else:
@@ -147,7 +147,8 @@ def make_request(ingredients):
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
     }
     try:
-        response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING, timeout=60)
+        response = requests.get(API_URL, headers=HEADERS, params=QUERYSTRING,
+                                timeout=60)
         response.raise_for_status()
 
         for i in trange(100):
@@ -161,10 +162,10 @@ def make_request(ingredients):
        |                                                   |
        | Please double-check your spelling and try again.  |
        |___________________________________________________|
-        """,Style.RESET_ALL)
+        """, Style.RESET_ALL)
             return False
         else:
-            return data       
+            return data
     except requests.exceptions.HTTPError as err:
         print("HTTP Error")
         print(err.args[0])
