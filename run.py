@@ -119,6 +119,7 @@ def recipe_input(by_type):
             error.print_error(f"{e}")
             continue
 
+
 def display_more_options():
     """
     Displays an input and returns the value options 1, 2 or 3
@@ -138,7 +139,7 @@ def display_more_options():
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
             continue
-    
+
 def make_request(ingredients):
     """
     Gets a list of ingredients and make a request to the API
@@ -184,8 +185,8 @@ def display_menu():
     This function display the main menu input that returns the selected option
     """
     option_selected = input(
-        f"\n {Fore.CYAN}" +
-        f"-->{Style.RESET_ALL} Select option: \n" +
+        f"\n{Fore.CYAN}" +
+        f"\n-->{Style.RESET_ALL} Select option: \n" +
         "      1 Get recipe by name              0 Exit Program\n"
         "      2 Get recipe by ingredients \n")
     return option_selected
@@ -201,6 +202,7 @@ def recipe_data_format(recipe):
     new_recipe = RecipeClass(recipe_name, recipe_description,
                              recipe_instructions)
     print(new_recipe.print_data())
+
 
 def select_recipe_options(recipes):
     """
@@ -229,7 +231,6 @@ def select_recipe_options(recipes):
             error = ErrorAlertClass()
             error.print_error(f"Please select a valid option")
                                   
-
 def process_recipe_input(input_type):
     """
     Process recipe inputs based on the input type and returns the recipe
@@ -268,5 +269,7 @@ def main():
             error = ErrorAlertClass()
             error.print_error("Please enter a valid option")
             continue
+
+
 main()
 
