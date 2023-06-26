@@ -198,8 +198,9 @@ def recipe_data_format(recipe):
     """
     recipe_name = recipe['name']
     recipe_description = recipe['description']
-    recipe_instructions =  recipe['instructions']
-    new_recipe = RecipeClass( recipe_name, recipe_description, recipe_instructions)
+    recipe_instructions = recipe['instructions']
+    new_recipe = RecipeClass(recipe_name, recipe_description,
+                             recipe_instructions)
     print(new_recipe.print_data())
 
 def select_recipe_options(recipes):
