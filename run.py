@@ -5,6 +5,7 @@ import config
 import requests
 from tqdm import trange
 from textwrap import TextWrapper
+import sys,time,random
 
 API_URL = config.API_URL
 API_KEY = config.API_KEY
@@ -22,22 +23,22 @@ class RecipeClass:
     def print_data(self):
         wrapper = TextWrapper()
         description = wrapper.wrap(self.description)
-        print("\nTitle:")
-        print(f"     {self.name}")
-        print("\nDescription:")
+        text_slowly("\nTitle: \n")
+        text_slowly(f"\n     {self.name} \n")
+        text_slowly("\nDescription: \n")
         for desc in description:
-            print(f"     {desc}")
+            text_slowly(f"\n     {desc} \n")
 
         instructions = self.instructions
         instructions_number = 0
-        print("\nInstructions:")
+        text_slowly("\nInstructions: \n")
         for instr in instructions:
             instructions_number += 1
-            print(f"    {instructions_number}-  {instr['display_text']}")
+            text_slowly(f" \n{instructions_number}) {instr['display_text']}\n")
         # print art text not happy? try again
         with open("not_happy.txt", 'r') as file:
             not_happy_art_text = file.read()
-        print(not_happy_art_text)
+        text_slowly(not_happy_art_text)
         return (Fore.LIGHTYELLOW_EX +
                 "\n ** SCROLL UP TO SEE FULL RECIPE *** "
                 + Style.RESET_ALL)
@@ -48,6 +49,16 @@ class ErrorAlertClass:
     """ Creates an instance for ErrorAlertClass"""
     def print_error(self, error):
         return print(Fore.RED, f"\n \U0001F6AB " f" {error}{Style.RESET_ALL}")
+
+
+def text_slowly(string):
+    """
+    This function will take a string and print it slowly like simulating typing
+    """
+    for letter in string:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(3.0/300)
 
 
 def display_program_welcome():
