@@ -17,18 +17,19 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
 
 - [Features](#features)
-      - [Main menu](#main-menu)
-      - [Secondary menu](#secondary-menu)
-      - [Recipe List](#recipe-list)
-      - [Recipe](#recipe)
+
+ - [Main menu](#main-menu)
+ - [Secondary menu](#secondary-menu)
+ - [Recipe List](#recipe-list)
+ - [Recipe](#recipe)
 
  - [Flowchart](#flowchart)
 
- - [Testing](#testing)
+- [Testing](#testing)
    - [Validator Testing](#validator-testing)
    - [Manual testing](#manual-testing)
    
-  - [Known Bugs](#known-bugs)
+- [Known Bugs](#known-bugs)
 
 - [Deployment ](#deployment)
 
