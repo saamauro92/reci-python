@@ -5,7 +5,8 @@ import config
 import requests
 from tqdm import trange
 from textwrap import TextWrapper
-import sys,time,random
+import sys
+import time
 
 API_URL = config.API_URL
 API_KEY = config.API_KEY
