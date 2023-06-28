@@ -18,10 +18,10 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
 - [Features](#features)
 
- - [Main menu](#main-menu)
- - [Secondary menu](#secondary-menu)
- - [Recipe List](#recipe-list)
- - [Recipe](#recipe)
+   - [Main menu](#main-menu)
+   - [Secondary menu](#secondary-menu)
+   - [Recipe List](#recipe-list)
+   - [Recipe](#recipe)
 
  - [Flowchart](#flowchart)
 
