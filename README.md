@@ -15,7 +15,7 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
   # Table of contents
 
-
+- [How to start](#how-to-start)
 - [Features](#features)
 
    - [Main menu](#main-menu)
@@ -42,6 +42,15 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
 
 ---
+## How to start
+
+1) Copy the github repository
+2) Open your terminal
+3) Change the current working directory to the location where you want the cloned directory.
+4) Write 'git clone "github repository"'
+5) Navegate to the folder and add an .env file
+6) Add env configurations API_URL and API_KEY (see [deployment section](#deployment)) 
+7) Run program with the command: "python3 run.py"
 
 ## Features
 
