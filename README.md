@@ -4,7 +4,7 @@
   
   
   
-**Reci-Python** is a command line program developed in Python that allows users to conveniently search for recipes based on their names or ingredients. The program provides a simple and efficient way to explore a wide variety of recipes and discover new culinary ideas.
+**Reci-Python** is a command-line program developed in Python that allows users to conveniently search for recipes based on their names or ingredients. The program provides a simple and efficient way to explore a wide variety of recipes and discover new culinary ideas.
 
 Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
@@ -38,7 +38,7 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 - [Credits](#credits)
   - [Content](#content)
 
-- [Acknowledgements](#acknowledgments)
+- [Acknowledgments](#acknowledgments)
 
 
 ---
@@ -129,8 +129,8 @@ All inputs in this program are validated and would display an error message if t
 | Secondary menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 4, and in another try "chicken" | a validation message was displayed|
 | Recipes list menu| When selecting any CORRECT option will proceed to display the recipe | selected 1, 2, 3, 4,  and 5 in different tries  | action displays the recipe |
 | Recipes list menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 8, and in another try "ham" | a validation message was displayed|
-| Recipes list menu| When selecting option 0 will go back to main menu | typed 0 and enter | main menu was displayed|
-| Main menu| When selecting option 0 will exit program | typed 0 and enter| Program was shut off|
+| Recipes list menu| When selecting option 0 will go back to the main menu | typed 0 and enter | main menu was displayed|
+| Main menu| When selecting option 0 will exit the program | typed 0 and enter| Program was shut off|
 
 Also, the program was tested using the NodeJS template in a local environment before uploading to Heroku.
 
@@ -170,7 +170,7 @@ The Program was deployed in Heroku.
   - [RapidAPI - Tasty](https://rapidapi.com/apidojo/api/tasty/) - Tasty API from RapidApi was used to get recipes 
  -  [GitHub](https://github.com/join/welcome) and [Git](https://git-scm.com/) were used to document the development process
    -  [Heroku](https://www.heroku.com/) was used for deployment.
-  - [PEP8CI](https://pep8ci.herokuapp.com/) used to validate Python code.
+  - [PEP8CI](https://pep8ci.herokuapp.com/) was used to validate Python code.
   -  [StackEdit](https://stackedit.io/) to write README
   - [Lucidchart](https://lucid.app/) was used to make the flowchart.
   - [VSC IDE](https://code.visualstudio.com/) 
@@ -191,13 +191,13 @@ The Program was deployed in Heroku.
 - Exception handling for Python requests  [StackOverflow](https://stackoverflow.com/questions/9054820/python-requests-exception-handling)
 - Exception handling for Python requests [geeksforgeeks](https://www.geeksforgeeks.org/exception-handling-of-python-requests-module/)
 - Working with credentials and configs in Python [tutorial](https://janakiev.com/blog/python-credentials-and-configuration/)
-- The Best way to navigate a nested JSON in Python [Stackoverflow](https://stackoverflow.com/questions/70782902/best-way-to-navigate-a-nested-json-in-python)
+- The Best way to navigate a nested JSON in Python [StackOverflow](https://stackoverflow.com/questions/70782902/best-way-to-navigate-a-nested-json-in-python)
 -   How to check if a variable is a string [tutorial](https://pythonprinciples.com/blog/check-if-var-is-string/)
 - Check if a string contains only letters  [tutorial](https://bobbyhadz.com/blog/python-check-if-string-contains-only-letters)
 - Using textwrap module [docs.python](https://docs.python.org/3/library/textwrap.html)
-- To get invalid emoji [Stackoverflow](https://stackoverflow.com/questions/30470079/emoji-value-range)
-- Progress bar module [Github - tqdm](https://github.com/tqdm/tqdm)
-- How to print simulate typing [Stackoverflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing)
+- To get invalid emoji [StackOverflow](https://stackoverflow.com/questions/30470079/emoji-value-range)
+- Progress bar module [GitHub - tqdm](https://github.com/tqdm/tqdm)
+- How to print simulate typing [StackOverflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing)
 
 
 
@@ -206,6 +206,6 @@ The Program was deployed in Heroku.
 
 ### Acknowledgments
 
-- The code institute
+- The Code Institute
 - Alan Bushell my cohort facilitator for support and advice.
 - Graeme Taylor my mentor for support and advice.
