@@ -112,7 +112,7 @@ def recipe_input(by_type):
                         continue
                     elif option == 2:
                         print(f"""{Fore.GREEN}
-                        \n Preparing your recipe... \n
+                        \n Preparing your recipe/s... \n
                         {Style.RESET_ALL}""")
                         return food
                     elif option == 3:
@@ -154,7 +154,7 @@ def display_more_options():
 
 def make_request(ingredients):
     """
-    Gets a list of ingredients and make a request to the API
+    Gets a list of ingredients and requests to API
     """
     QUERYSTRING = {"from": "1", "size": "10", "q": ", ".join(ingredients)}
     HEADERS = {
@@ -173,7 +173,7 @@ def make_request(ingredients):
             print(Fore.BLUE, """
         ___________________________________________________
        |                                                   |
-       | Sorry, no results found.                          |
+       | Sorry, no results were found.                     |
        |                                                   |
        | Please double-check your spelling and try again.  |
        |___________________________________________________|
@@ -194,19 +194,19 @@ def make_request(ingredients):
 
 def display_menu():
     """
-    This function display the main menu input that returns the selected option
+    This function displays the main menu input that returns the selected option
     """
     option_selected = input(
         f"\n{Fore.CYAN}" +
         f"\n-->{Style.RESET_ALL} Select option: \n" +
-        "      1 Get recipe by name              0 Exit Program\n"
-        "      2 Get recipe by ingredients \n")
+        "      1 Get the recipe by name              0 Exit Program\n"
+        "      2 Get the recipe by ingredients \n")
     return option_selected
 
 
 def recipe_data_format(recipe):
     """
-    Get a recipe data and creates an instance of RecipeClass with the data
+    Get recipe data and creates an instance of RecipeClass with the data
     """
     recipe_name = recipe['name']
     recipe_description = recipe['description']
@@ -218,7 +218,7 @@ def recipe_data_format(recipe):
 
 def select_recipe_options(recipes):
     """
-    Gets the recipes and display a list of them in order to choose them
+    Gets the recipes and displays a list of them to choose them
     """
     while True:
         print("\n We have prepared these recipes: \n")
