@@ -152,6 +152,7 @@ def display_more_options():
             error.print_error("Please enter a valid option")
             continue
 
+
 def make_request(ingredients):
     """
     Gets a list of ingredients and requests to API
@@ -242,7 +243,8 @@ def select_recipe_options(recipes):
         else:
             error = ErrorAlertClass()
             error.print_error(f"Please select a valid option")
-                                  
+
+
 def process_recipe_input(input_type):
     """
     Process recipe inputs based on the input type and returns the recipe
