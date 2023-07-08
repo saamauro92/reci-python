@@ -42,15 +42,6 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
 
 ---
-## How to start
-
-1) Copy the GitHub repository
-2) Open your terminal
-3) Change the current working directory to the location where you want the cloned directory.
-4) Write 'git clone "GitHub repository"'
-5) Navigate to the folder and add a .env file
-6) Add env configurations API_URL and API_KEY (see [deployment section](#deployment)) 
-7) Run the program with the command: "python3 run.py"
 
 ## Features
 
@@ -147,19 +138,46 @@ Also, the program was tested using the NodeJS template in a local environment be
 ## Deployment
 
 The Program was deployed in Heroku.
- 
-1.  Log in to your Heroku account and access the dashboard.
-2.  Look for the "New" button and click on it to create a new app.
-3.  Provide a unique name for your app, select the region that is  closest to you, and click "Create app."
-4.  In the app's settings, locate the "Reveal Config Vars" button and click on it.
+
+1. Log in to your Heroku account and access the dashboard.
+
+2. Look for the "New" button and click on it to create a new app.
+
+3. Provide a unique name for your app, select the region that is closest to you, and click "Create app."
+
+4. In the app's settings, locate the "Reveal Config Vars" button and click on it.
+
 5. Create a configuration variable "API_URL" and the value "https://tasty.p.rapidapi.com/recipes/list"
-6.  Get your API key and create a configuration variable "API_KEY" and complete the value with your key.
-7.  Create another configuration variable "PORT" and the value to "8000," and click "Add."
-8.  To specify the dependencies for your app, go to the "Add Buildpack" section.
-9.  Select "Python" as the first dependency and "Node.js" as the second. The order of the dependencies is crucial.
-10.  Navigate to the "Deploy" tab and choose "GitHub" as the deployment method.
-11.  Connect your Heroku account to your GitHub account and select the repository you want to deploy.
-12.  Enable the "Automatic Deploy" option if you want Heroku to rebuild your project automatically every time you push a new commit.
+
+6. Get your API key and create a configuration variable "API_KEY" and complete the value with your key.
+
+7. Create another configuration variable "PORT" and the value to "8000," and click "Add."
+
+8. To specify the dependencies for your app, go to the "Add Buildpack" section.
+
+9. Select "Python" as the first dependency and "Node.js" as the second. The order of the dependencies is crucial.
+
+10. Navigate to the "Deploy" tab and choose "GitHub" as the deployment method.
+
+11. Connect your Heroku account to your GitHub account and select the repository you want to deploy.
+
+12. Enable the "Automatic Deploy" option if you want Heroku to rebuild your project automatically every time you push a new commit.
+  
+### Local Deployment  
+
+1) Copy the GitHub repository
+
+2) Open your terminal
+
+3) Change the current working directory to the location where you want the cloned directory.
+
+4) Write 'git clone "GitHub repository"'
+
+5) Navigate to the folder and add a .env file
+
+6) Add env configurations API_URL and API_KEY (see [deployment section](#deployment))
+
+7) Run the program with the command: "python3 run.py"
 
 ## Technologies Used
   ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)   ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
