@@ -6,6 +6,8 @@
   
 **Reci-Python** is a command-line program developed in Python that allows users to conveniently search for recipes based on their names or ingredients. The program provides a simple and efficient way to explore a wide variety of recipes and discover new culinary ideas.
 
+This is an ideal program for individuals who have a passion for cooking, enjoy experimenting with different recipes, and want a convenient way to access a vast collection of culinary ideas. It is particularly suitable for the following groups of people Home Cooks and Food Enthusiasts, Health-Conscious Individuals, Culinary Students and Chefs and Busy Professionals and Students.
+
 Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
   
