@@ -109,20 +109,20 @@ Using the PEP8CI Python validator no errors were found.
 All inputs in this program are validated and would display an error message if there was a format issue. In menus, there is always an option to go back and even exit the program.
 
   
-| Feature | Expect | Action | Result |
-|--|--|--|--|
-| Main menu| When selecting any CORRECT option will proceed to the action | selected 1, 2, 0  in different tries  | action perfectly executed |
-| Main menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 4, and in another try "cheese" | a validation message was displayed|
-| Add Recipe by name input| When typing and entering any string will start preparing the recipe | typed a string  | action perfectly executed |
-| Add Recipe by name input| When typing and entering any string mixed with numbers or just numbers will display a validator message | typed a string mixed with a number and then a number  | validator message displayed 
-| Add Recipe by ingredient input| When typing and entering any string will display the secondary menu | typed a string  | secondary menu displayed |
-| Add Recipe by ingredient input| When typing and entering any string mixed with numbers or just numbers will display a validator message| typed a string mixed with number | validator message displayed |
-| Secondary menu| When selecting any CORRECT option will proceed to the action | selected 1, 2, 3  in different tries  | action perfectly executed |
-| Secondary menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 4, and in another try "chicken" | a validation message was displayed|
-| Recipes list menu| When selecting any CORRECT option will proceed to display the recipe | selected 1, 2, 3, 4,  and 5 in different tries  | action displays the recipe |
-| Recipes list menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 8, and in another try "ham" | a validation message was displayed|
-| Recipes list menu| When selecting option 0 will go back to the main menu | typed 0 and enter | main menu was displayed|
-| Main menu| When selecting option 0 will exit the program | typed 0 and enter| Program was shut off|
+| Feature | Expect | Action | Result | Pass/Fail |
+|--|--|--|--|--|
+| Main menu| When selecting any CORRECT option will proceed to the action | selected 1, 2, 0  in different tries  | action perfectly executed |:heavy_check_mark:|
+| Main menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 4, and in another try "cheese" | a validation message was displayed|:heavy_check_mark:|
+| Add Recipe by name input| When typing and entering any string will start preparing the recipe | typed a string  | action perfectly executed |:heavy_check_mark:|
+| Add Recipe by name input| When typing and entering any string mixed with numbers or just numbers will display a validator message | typed a string mixed with a number and then a number  | validator message displayed |:heavy_check_mark:|
+| Add Recipe by ingredient input| When typing and entering any string will display the secondary menu | typed a string  | secondary menu displayed |:heavy_check_mark:|
+| Add Recipe by ingredient input| When typing and entering any string mixed with numbers or just numbers will display a validator message| typed a string mixed with number | validator message displayed |:heavy_check_mark:|
+| Secondary menu| When selecting any CORRECT option will proceed to the action | selected 1, 2, 3  in different tries  | action perfectly executed |:heavy_check_mark:|
+| Secondary menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 4, and in another try "chicken" | a validation message was displayed|:heavy_check_mark:|
+| Recipes list menu| When selecting any CORRECT option will proceed to display the recipe | selected 1, 2, 3, 4,  and 5 in different tries  | action displays the recipe |:heavy_check_mark:|
+| Recipes list menu| When selecting an INCORRECT option or text format will proceed to display a message validator | typed 8, and in another try "ham" | a validation message was displayed|:heavy_check_mark:|
+| Recipes list menu| When selecting option 0 will go back to the main menu | typed 0 and enter | main menu was displayed|:heavy_check_mark:|
+| Main menu| When selecting option 0 will exit the program | typed 0 and enter| Program was shut off|:heavy_check_mark:|
 
 Also, the program was tested using the NodeJS template in a local environment before uploading to Heroku.
 
