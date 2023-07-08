@@ -99,9 +99,10 @@ def recipe_input(by_type):
                 raise ValueError("Invalid input type")
 
             match_string = re.match(r'^[a-zA-Z\s]+$', type_of_food)
-
             if match_string is None:
                 raise ValueError("Please enter a valid text format")
+            elif len(type_of_food) < 3:
+                raise ValueError("Please enter more than 3 characters")
             else:
                 food.append(type_of_food)
                 print(Fore.GREEN, "\n You have selected " + ", ".join(food)
