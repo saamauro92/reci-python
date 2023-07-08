@@ -32,6 +32,7 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 - [Known Bugs](#known-bugs)
 
 - [Deployment ](#deployment)
+   - [Local Deployment](#local-deployment)
 
 - [Technologies Used](#technologies-used)
 
