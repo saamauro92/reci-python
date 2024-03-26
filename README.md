@@ -100,9 +100,6 @@ Live version  [Here](https://reci-python-6494e488519a.herokuapp.com/)
 
 ### Validator Testing
 
-Using the PEP8CI Python validator no errors were found.
-
-![validator](https://github.com/saamauro92/reci-python/raw/main/assets/images/validator.png)
   
 
 ### Manual testing
