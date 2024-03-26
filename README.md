@@ -203,7 +203,6 @@ The Program was deployed in Heroku.
 
 ### Content
 
-- Code institute student program
 - Command Line Interface Guidelines [clig.dev](https://clig.dev/)
 - Code snippet for request API [RapidApi](https://rapidapi.com/apidojo/api/tasty/)
 - Exception handling for Python requests  [StackOverflow](https://stackoverflow.com/questions/9054820/python-requests-exception-handling)
