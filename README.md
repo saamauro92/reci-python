@@ -222,8 +222,4 @@ The Program was deployed in Heroku.
 
   
 
-### Acknowledgments
 
-- The Code Institute
-- Alan Bushell my cohort facilitator for support and advice.
-- Graeme Taylor my mentor for support and advice.
